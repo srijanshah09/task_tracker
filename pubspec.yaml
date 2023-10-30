@@ -13,6 +13,11 @@ dependencies:
     sdk: flutter
 
   # Utility Packages
+  http: ^1.1.0
+  intl: ^0.18.1
+  logger: ^2.0.2+1
+  url_launcher: ^6.2.1
+  get_storage: ^2.1.1
 
   #Icons
   cupertino_icons: ^1.0.2
@@ -39,6 +44,6 @@ flutter:
 
   fonts:
     - family: Poppins
-      fonts:
-        asset: assets/fonts/Poppins-Light.ttf
-        weight: 300
+    -  fonts:
+        - asset: assets/fonts/Poppins-Light.ttf
+        - weight: 300
