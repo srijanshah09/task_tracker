@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:task_tracker/utils/colors.dart';
 
 class ZAppBarTheme{
   ZAppBarTheme._();
 
-  static const lightAppBarTheme = AppBarTheme(
-    elevation: 0,
+  static final lightAppBarTheme = AppBarTheme(
+    elevation: 1,
     centerTitle: false,
     scrolledUnderElevation: 0,
-    backgroundColor: Colors.transparent,
+    backgroundColor: lightBgColor2,
     surfaceTintColor: Colors.transparent,
     iconTheme: IconThemeData(
       color: Colors.black,
@@ -24,11 +25,11 @@ class ZAppBarTheme{
     )
   );
 
-  static const darkAppBarTheme = AppBarTheme(
+  static final darkAppBarTheme = AppBarTheme(
       elevation: 0,
       centerTitle: false,
       scrolledUnderElevation: 0,
-      backgroundColor: Colors.transparent,
+      backgroundColor: darkBgColor2,
       surfaceTintColor: Colors.transparent,
       iconTheme: IconThemeData(
         color: Colors.white,
