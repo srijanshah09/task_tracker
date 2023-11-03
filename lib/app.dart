@@ -1,19 +1,63 @@
-
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:task_tracker/utils/colors.dart';
 import 'package:task_tracker/utils/theme/theme.dart';
 
-class App extends StatelessWidget {
+final iconList = <IconData>[
+  Icons.calendar_view_day_rounded,
+  Icons.edit_calendar_rounded,
+  Icons.add_circle_outline_rounded,
+  Icons.notifications_active_rounded,
+];
+
+class App extends StatefulWidget {
   const App({super.key});
 
-  // This widget is the root of your application.
   @override
+  State<App> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  // This widget is the root of your application.
+  var _bottomNavIndex = 0; @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       themeMode: ThemeMode.system,
       theme: ZAppTheme.lightTheme,
       darkTheme: ZAppTheme.darkTheme,
-      home: const Text('Flutter Demo Home Page'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Text App'),
+        ),
+        body: Container(
+          margin: const EdgeInsets.symmetric(
+            vertical: 20,
+            horizontal: 12,
+          ),
+          child: const Text(
+            'Flutter Demo Home Page',
+          ),
+        ),
+        endDrawer: const Drawer(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          mini: true,
+          child: const Icon(
+            Icons.play_arrow_rounded,
+          ),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+        bottomNavigationBar: AnimatedBottomNavigationBar(
+          backgroundColor : darkBgColor2,
+          icons: iconList,
+          activeIndex: _bottomNavIndex,
+          gapLocation: GapLocation.end,
+          notchSmoothness: NotchSmoothness.defaultEdge,
+          onTap: (index) => setState(() => _bottomNavIndex = index),
+          //other params
+        ),
+      ),
     );
   }
 }
