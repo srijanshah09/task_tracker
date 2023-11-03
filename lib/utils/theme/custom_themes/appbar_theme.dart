@@ -10,15 +10,15 @@ class ZAppBarTheme{
     scrolledUnderElevation: 0,
     backgroundColor: lightBgColor2,
     surfaceTintColor: Colors.transparent,
-    iconTheme: IconThemeData(
+    iconTheme: const IconThemeData(
       color: Colors.black,
       size: 24,
     ),
-    actionsIconTheme: IconThemeData(
+    actionsIconTheme: const IconThemeData(
       color: Colors.black,
       size: 24,
     ),
-    titleTextStyle: TextStyle(
+    titleTextStyle: const TextStyle(
       fontSize: 18,
       fontWeight: FontWeight.w600,
       color: Colors.black,
@@ -31,15 +31,15 @@ class ZAppBarTheme{
       scrolledUnderElevation: 0,
       backgroundColor: darkBgColor2,
       surfaceTintColor: Colors.transparent,
-      iconTheme: IconThemeData(
+      iconTheme: const IconThemeData(
         color: Colors.white,
         size: 24,
       ),
-      actionsIconTheme: IconThemeData(
+      actionsIconTheme: const IconThemeData(
         color: Colors.white,
         size: 24,
       ),
-      titleTextStyle: TextStyle(
+      titleTextStyle: const TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.w600,
         color: Colors.white,

@@ -28,10 +28,10 @@ class _AppState extends State<App> {
       darkTheme: ZAppTheme.darkTheme,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Text App'),
+          title: const Text('Text App'),
         ),
         body: Container(
-          margin: EdgeInsets.symmetric(
+          margin: const EdgeInsets.symmetric(
             vertical: 20,
             horizontal: 12,
           ),
@@ -39,11 +39,11 @@ class _AppState extends State<App> {
             'Flutter Demo Home Page',
           ),
         ),
-        endDrawer: Drawer(),
+        endDrawer: const Drawer(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           mini: true,
-          child: Icon(
+          child: const Icon(
             Icons.play_arrow_rounded,
           ),
         ),

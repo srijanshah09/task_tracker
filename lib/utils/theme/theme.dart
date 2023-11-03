@@ -36,7 +36,7 @@ class ZAppTheme{
     fontFamily: 'Poppins',
     brightness: Brightness.dark,
     primaryColor: successColor,
-    scaffoldBackgroundColor: Colors.black,
+    scaffoldBackgroundColor: darkBgColor,
     textTheme: ZTextTheme.darkTextTheme,
     chipTheme: ZChipTheme.darkChipTheme,
     appBarTheme: ZAppBarTheme.darkAppBarTheme,
