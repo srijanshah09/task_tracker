@@ -5,8 +5,11 @@ import 'package:task_tracker/utils/theme/custom_themes/bottom_nav_bar_theme.dart
 import 'package:task_tracker/utils/theme/custom_themes/bottom_sheet_theme.dart';
 import 'package:task_tracker/utils/theme/custom_themes/checkbox_theme.dart';
 import 'package:task_tracker/utils/theme/custom_themes/chip_theme.dart';
+import 'package:task_tracker/utils/theme/custom_themes/color_scheme_theme.dart';
 import 'package:task_tracker/utils/theme/custom_themes/elevated_button_theme.dart';
 import 'package:task_tracker/utils/theme/custom_themes/floating_action_button_theme.dart';
+import 'package:task_tracker/utils/theme/custom_themes/icon_button_theme.dart';
+import 'package:task_tracker/utils/theme/custom_themes/icon_theme.dart';
 import 'package:task_tracker/utils/theme/custom_themes/outlined_button_theme.dart';
 import 'package:task_tracker/utils/theme/custom_themes/text_field_theme.dart';
 import 'package:task_tracker/utils/theme/custom_themes/text_theme.dart';
@@ -30,6 +33,8 @@ class ZAppTheme{
     inputDecorationTheme: ZTextFormFieldTheme.lightInputDecorationTheme,
     floatingActionButtonTheme: ZFloatingActionButtonTheme.lightFloatingActionButtonTheme,
     bottomNavigationBarTheme: ZBottomNavigationBarTheme.lightBottomNavigationBarTheme,
+    colorScheme: ZColorSchemeTheme.lightColorSchemeTheme,
+    iconButtonTheme: ZIconButtonTheme.lightIconButtonTheme,
   );
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
@@ -38,6 +43,7 @@ class ZAppTheme{
     primaryColor: successColor,
     scaffoldBackgroundColor: darkBgColor,
     textTheme: ZTextTheme.darkTextTheme,
+    iconTheme: ZIconTheme.darkIconTheme,
     chipTheme: ZChipTheme.darkChipTheme,
     appBarTheme: ZAppBarTheme.darkAppBarTheme,
     checkboxTheme: ZCheckboxTheme.darkCheckboxTheme,
@@ -47,5 +53,7 @@ class ZAppTheme{
     inputDecorationTheme: ZTextFormFieldTheme.darkInputDecorationTheme,
     floatingActionButtonTheme: ZFloatingActionButtonTheme.darkFloatingActionButtonTheme,
     bottomNavigationBarTheme: ZBottomNavigationBarTheme.darkBottomNavigationBarTheme,
+    colorScheme: ZColorSchemeTheme.darkColorSchemeTheme,
+    iconButtonTheme: ZIconButtonTheme.darkIconButtonTheme,
   );
 }
