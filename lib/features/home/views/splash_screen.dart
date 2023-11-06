@@ -14,14 +14,14 @@ class _SplashScreenState extends State<SplashScreen> {
 @override
   void initState() {
     // TODO: implement initState
-    Future.delayed(Duration(seconds: 3),() => context.pushReplacementNamed('home'));
+    Future.delayed(const Duration(seconds: 3),() => context.pushReplacementNamed('home'));
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Center(
