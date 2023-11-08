@@ -1,5 +1,7 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:task_tracker/app.dart';
 
 final iconList = <IconData>[
   Icons.calendar_view_day_rounded,
@@ -20,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   var _bottomNavIndex = 0;
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Text App'),
@@ -30,12 +33,13 @@ class _HomeScreenState extends State<HomeScreen> {
           vertical: 20,
           horizontal: 12,
         ),
-        child: const Text(
-          'Flutter Demo Home Page',
+        child: Text(
+          '${context.watch<Counter>().count}',
+          key: const Key('counterState'),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => context.read<Counter>().increment(),
         mini: true,
         child: const Icon(
           Icons.play_arrow_rounded,
