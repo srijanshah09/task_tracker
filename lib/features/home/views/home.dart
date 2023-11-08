@@ -1,7 +1,7 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:task_tracker/app.dart';
+import 'package:task_tracker/utils/providers/user.dart';
 
 final iconList = <IconData>[
   Icons.calendar_view_day_rounded,
@@ -34,12 +34,12 @@ class _HomeScreenState extends State<HomeScreen> {
           horizontal: 12,
         ),
         child: Text(
-          '${context.watch<Counter>().count}',
+          'Users ${context.watch<User>().count}',
           key: const Key('counterState'),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => context.read<Counter>().increment(),
+        onPressed: () => context.read<User>().increment(),
         mini: true,
         child: const Icon(
           Icons.play_arrow_rounded,
