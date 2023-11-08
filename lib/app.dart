@@ -1,7 +1,4 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:task_tracker/utils/providers/user.dart';
 import 'package:task_tracker/utils/theme/theme.dart';
 import 'package:task_tracker/utils/router/router.dart';
 
@@ -10,17 +7,12 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) =>User()),
-      ],
-      child: MaterialApp.router(
+    return MaterialApp.router(
         title: 'Flutter Demo',
         themeMode: ThemeMode.system,
         theme: ZAppTheme.lightTheme,
         darkTheme: ZAppTheme.darkTheme,
         routerConfig: ZRouter.router,
-      ),
     );
   }
 }
