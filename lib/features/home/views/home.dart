@@ -1,8 +1,8 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:task_tracker/utils/providers/user.dart';
 
-import '../../../utils/state_controllers/user_controller.dart';
 
 final iconList = <IconData>[
   Icons.calendar_view_day_rounded,
@@ -20,7 +20,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   var _bottomNavIndex = 0;
-  var local_count = 0.obs;
+  var localCount = 0.obs;
   final controller = Get.put(User());
 
   @override
@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Obx(() => Text('local counter : $local_count')),
+            Obx(() => Text('local counter : $localCount')),
             GetBuilder<User>(
               builder: (_) => Text(
                 'clicks: ${controller.count}',
@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         // onPressed: () => controller.increment(),
-        onPressed: () => local_count++,
+        onPressed: () => localCount++,
         mini: true,
         child: const Icon(
           Icons.play_arrow_rounded,
