@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:task_tracker/utils/colors.dart';
 
@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
 @override
   void initState() {
     // TODO: implement initState
-    Future.delayed(const Duration(seconds: 3),() => context.pushReplacementNamed('home'));
+    Future.delayed(const Duration(seconds: 3),() => Get.toNamed('/home'));
     super.initState();
   }
 
