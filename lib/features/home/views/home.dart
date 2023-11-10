@@ -1,6 +1,10 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:task_tracker/features/analytics/views/analytics_screen.dart';
+import 'package:task_tracker/features/execution/views/execute_screen.dart';
+import 'package:task_tracker/features/planning/views/planning_screen.dart';
+import 'package:task_tracker/features/settings/views/settings_screen.dart';
 import 'package:task_tracker/utils/providers/user.dart';
 
 
@@ -20,48 +24,34 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   var _bottomNavIndex = 0;
-  var localCount = 0.obs;
   final controller = Get.put(User());
+
+  List<Widget> bottomNavScreen = [
+    const ExecuteScreen(),
+    const PlanningScreen(),
+    const AnalyticsScreen(),
+    const SettingsScreen(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Text App'),
-      ),
       endDrawer: const Drawer(),
       body: Container(
         margin: const EdgeInsets.symmetric(
           vertical: 20,
           horizontal: 12,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Obx(() => Text('local counter : $localCount')),
-            GetBuilder<User>(
-              builder: (_) => Text(
-                'clicks: ${controller.count}',
-              ),
-            ),
-          ],
-        ),
+        child: bottomNavScreen[_bottomNavIndex],
       ),
-      floatingActionButton: FloatingActionButton(
-        // onPressed: () => controller.increment(),
-        onPressed: () => localCount++,
-        mini: true,
-        child: const Icon(
-          Icons.play_arrow_rounded,
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       bottomNavigationBar: AnimatedBottomNavigationBar(
         backgroundColor: Theme.of(context).colorScheme.onSurface,
         icons: iconList,
         activeIndex: _bottomNavIndex,
-        gapLocation: GapLocation.end,
-        notchSmoothness: NotchSmoothness.defaultEdge,
+        leftCornerRadius: 32,
+        rightCornerRadius: 32,
+        notchSmoothness: NotchSmoothness.smoothEdge,
+        gapLocation: GapLocation.none,
         onTap: (index) => setState(() => _bottomNavIndex = index),
         //other params
       ),
