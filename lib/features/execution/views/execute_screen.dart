@@ -57,16 +57,16 @@ class _ExecuteScreenState extends State<ExecuteScreen> {
                                         color: Theme.of(context).primaryColor,
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(10.0),
+                                        padding: const EdgeInsets.all(5.0),
                                         child: _value[index]
                                             ? const Icon(
                                                 Icons.check,
-                                                size: 10.0,
+                                                size: 25.0,
                                                 color: Colors.white,
                                               )
                                             : Icon(
                                                 Icons.check_box_outline_blank,
-                                                size: 10.0,
+                                                size: 25.0,
                                                 color: Theme.of(context).primaryColor,
                                               ),
                                       ),
@@ -90,7 +90,7 @@ class _ExecuteScreenState extends State<ExecuteScreen> {
             ],
           ),
           Positioned(
-            bottom: 10,
+            top: MediaQuery.of(context).size.height - 150,
             width: MediaQuery.of(context).size.width - 20,
             child: Center(
               child: IconButton(

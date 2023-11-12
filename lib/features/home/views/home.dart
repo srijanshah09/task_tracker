@@ -39,6 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       endDrawer: const Drawer(),
       body: bottomNavScreen[_bottomNavIndex],
+      extendBody: true,
       bottomNavigationBar: AnimatedBottomNavigationBar(
         backgroundColor: secondaryColor,
         icons: iconList,
