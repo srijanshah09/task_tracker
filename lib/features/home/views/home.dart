@@ -5,6 +5,7 @@ import 'package:task_tracker/features/analytics/views/analytics_screen.dart';
 import 'package:task_tracker/features/execution/views/execute_screen.dart';
 import 'package:task_tracker/features/planning/views/planning_screen.dart';
 import 'package:task_tracker/features/settings/views/settings_screen.dart';
+import 'package:task_tracker/utils/colors.dart';
 import 'package:task_tracker/utils/providers/user.dart';
 
 
@@ -37,16 +38,12 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       endDrawer: const Drawer(),
-      body: Container(
-        margin: const EdgeInsets.symmetric(
-          vertical: 20,
-          horizontal: 12,
-        ),
-        child: bottomNavScreen[_bottomNavIndex],
-      ),
+      body: bottomNavScreen[_bottomNavIndex],
       bottomNavigationBar: AnimatedBottomNavigationBar(
-        backgroundColor: Theme.of(context).colorScheme.onSurface,
+        backgroundColor: secondaryColor,
         icons: iconList,
+        activeColor: Colors.white,
+        inactiveColor: Colors.white.withOpacity(0.7),
         activeIndex: _bottomNavIndex,
         leftCornerRadius: 32,
         rightCornerRadius: 32,
