@@ -5,13 +5,13 @@ class ZBottomNavigationBarTheme{
   ZBottomNavigationBarTheme._();
 
   static final lightBottomNavigationBarTheme = BottomNavigationBarThemeData(
-    backgroundColor: secondaryColor,
+    backgroundColor: Colors.transparent,
     selectedItemColor: successColor,
     unselectedItemColor: Colors.black,
   );
 
   static final darkBottomNavigationBarTheme = BottomNavigationBarThemeData(
-    backgroundColor: secondaryColor,
+    elevation: 0,
     selectedItemColor: successColor,
     unselectedItemColor: Colors.white,
   );
